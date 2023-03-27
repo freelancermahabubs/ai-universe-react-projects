@@ -2,9 +2,11 @@ import React from 'react';
 
 
 const SingleData = (props) => {
-  // console.log(props.singleData)
-  const {image, name, features, description, links, published_in} = props.singleData
-  console.log(features)
+
+  const {image, name, features, id, published_in} = props.singleData;
+  const handleId = (id) =>{
+
+  }
   return (
     <>
   <div className="card w-full bg-base-100 shadow-2xl">
@@ -12,7 +14,7 @@ const SingleData = (props) => {
   <div className="card-body">
     <h2 className="card-title font-bold">Features</h2>
     {
-      features.map((feature, index) => <p className='text-gray-500'> {index + 1} {feature}</p>)
+      features?.map((feature, index) => <p className='text-gray-500'> {index + 1} {feature}</p>)
     }
     <hr className='border-2 border-info my-4 rounded-lg'/>
     <h2 className="card-title font-bold">{name}</h2>
@@ -25,11 +27,11 @@ const SingleData = (props) => {
     <p>{published_in}</p>
 
     <div>
-      <span className='cursor-pointer'>
+      <label onClick={()=> props.setUniqueId(id)} htmlFor="my-modal-5" className='cursor-pointer'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
 </svg>
-      </span>
+      </label>
     </div>
     </div>
   </div>

@@ -9,7 +9,6 @@ const App = () => {
   return (
     <>
     <Header/>
-    <Button>Short By Date</Button>
     <Cards/>
     </>
 
